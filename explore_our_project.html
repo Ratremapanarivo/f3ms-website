@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects – F3MS Association </title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue: #0a6cf1;
+            --yellow: #f2b705;
+            --dark: #064e52;
+            --bg-light: #f7f7f7;
+            --transition: all 0.3s ease;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Inter', Arial, sans-serif; 
+            background: var(--bg-light); 
+            color: #333; 
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+
+        /* NAVBAR */
+        .navbar {
+            background: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-text { font-weight: 700; color: var(--blue); font-size: 1.5rem; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { font-weight: 600; color: var(--dark); }
+        .nav-cta {
+            background: var(--yellow);
+            padding: 10px 20px;
+            border-radius: 25px;
+            color: var(--dark) !important;
+        }
+
+        /* HEADER PAGE */
+        .page-header {
+            background: linear-gradient(135deg, var(--blue), #06459c);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        /* PROJECTS GRID */
+        .projects-section { padding: 60px 0; }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .project-content { padding: 25px; }
+        .project-tag {
+            background: var(--yellow);
+            color: var(--dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .project-content h3 { margin: 15px 0 10px; color: var(--dark); }
+
+        /* FOOTER */
+        .footer-f3ms { 
+            background: linear-gradient(180deg, #5b7c99 0%, #eab90e 100%);
+            color: #fff; 
+            padding: 60px 0 30px; 
+            margin-top: 50px;
+        }
+        .footer-bottom { 
+            text-align: center; margin-top: 40px; padding-top: 20px; 
+            border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.8em;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-flex">
+            <a href="index.html" class="logo-text"> F3MS Association</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="our_actions.html">Our actions </a></li>
+                <li><a href="impact.html">Impact</a></li>
+                <li><a href="donate.html" class="nav-cta">Donate</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Our Projects & Activities</h1>
+            <p>See how your support turns into real action.</p>
+        </div>
+    </header>
+
+    <section class="projects-section">
+        <div class="container">
+            <div class="projects-grid">
+                
+                <article class="project-card">
+                    <div class="project-content">
+                        <span class="project-tag">Education</span>
+                        <h3>School Kits for All</h3>
+                        <p>Providing essential supplies and uniforms to ensure children from vulnerable families can attend school with dignity.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-content">
+                        <span class="project-tag">Nutrition</span>
+                        <h3>Food Support Program</h3>
+                        <p>Emergency food aid for families in major difficulty through baskets of basic food items (rice, oil, beans).</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-content">
+                        <span class="project-tag">Health</span>
+                        <h3>Access to Healthcare</h3>
+                        <p>Partnering with local health centers to cover essential medical costs for vulnerable individuals.</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-f3ms">
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2026 F3MS Association. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

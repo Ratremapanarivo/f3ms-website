@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F3MS – From Care to Change</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue: #0a6cf1;
+            --yellow: #f2b705;
+            --dark: #064e52;
+            --light-teal: #0fa4af;
+            --bg-light: #f7f7f7;
+            --transition: all 0.3s ease;
+        }
+
+        /* RESET & BASE */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Inter', Arial, sans-serif; 
+            background: var(--bg-light); 
+            color: #333; 
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+
+        /* NAVBAR */
+        .navbar {
+            background: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-text { font-weight: 700; color: var(--blue); font-size: 1.5rem; }
+        
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { font-weight: 600; color: var(--dark); font-size: 0.95em; }
+        .nav-links a:hover { color: var(--blue); }
+        .nav-cta {
+            background: var(--yellow);
+            padding: 10px 20px;
+            border-radius: 25px;
+            color: var(--dark) !important;
+        }
+        .nav-cta:hover { background: #e0aa00; transform: translateY(-2px); }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--blue), #06459c);
+            color: #fff;
+            text-align: center;
+            padding: 120px 20px;
+            clip-path: ellipse(150% 100% at 50% 0%);
+        }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
+
+        /* IMPACT SECTION */
+        .impact { padding: 80px 0; background: var(--bg-light); text-align: center; }
+        .section-title { margin-bottom: 50px; color: var(--dark); font-size: 2.2rem; position: relative; }
+        .section-title::after { 
+            content: ''; display: block; width: 60px; height: 4px; background: var(--yellow); margin: 15px auto; 
+        }
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .impact-card {
+            padding: 40px;
+            border-radius: 15px;
+            background: #fff;
+            border-bottom: 5px solid var(--yellow);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        .impact-card:hover { transform: translateY(-10px); }
+        .impact-card h3 { font-size: 3rem; color: var(--blue); margin-bottom: 10px; }
+        .impact-card p { color: #666; font-weight: 600; font-size: 1.1rem; }
+
+        /* FOOTER CORRIGÉ */
+        .footer-f3ms { 
+            background: #06459c; /* Fond bleu uni pour que le logo ressorte bien */
+            color: #fff; 
+            padding: 80px 0 40px; 
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        /* MODIFICATION ICI : On a enlevé le filtre qui rendait blanc */
+        .footer-brand img { 
+            height: 80px; /* Un peu plus grand */
+            width: auto;
+            margin-bottom: 15px; 
+            display: block;
+        }
+        .footer-brand p { font-size: .95em; line-height: 1.6; margin-bottom: 25px; opacity: 0.9; }
+        .footer-btn {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--dark);
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+        .footer-btn:hover { background: #e0aa00; transform: scale(1.05); }
+        .footer-f3ms h4 { color: #fff; text-decoration: underline; text-underline-offset: 5px; margin-bottom: 20px; font-size: 1.2rem; }
+        .footer-f3ms a { display: block; margin-bottom: 12px; font-size: .95em; opacity: 0.9; color: #fff; }
+        .footer-f3ms a:hover { opacity: 1; text-decoration: underline; }
+        
+        .social-icons { display: flex; gap: 14px; margin-top: 10px; }
+        .social-icons a {
+            width: 42px; height: 42px; border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .social-icons a:hover { background: #fff; transform: rotate(360deg); }
+        .social-icons a:hover svg { fill: var(--dark); }
+        .social-icons svg { width: 20px; height: 20px; fill: #fff; }
+
+        .footer-bottom { 
+            text-align: center; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.2); 
+            font-size: 0.85em; opacity: 0.8; 
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { padding: 80px 20px; }
+            .impact-card { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-flex">
+            <a href="#" class="logo-text">F3MS Association</a>
+            <ul class="nav-links">
+                <li><a href="javascript:void(0);" onclick="window.location.reload();">Home</a></li>
+                <li><a href="our_actions.html">Our Actions</a></li>
+                <li><a href="impact.html">Impact</a></li>
+                <li><a href="donate.html" class="nav-cta">Donate</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>From Care to Change</h1>
+            <p>Supporting vulnerable communities through dignity, solidarity, and sustainable action.</p>
+            <a href="explore_our_project.html" class="footer-btn">Explore Our Projects</a>
+        </div>
+    </section>
+
+    <section class="impact">
+        <div class="container">
+            <h2 class="section-title">Our Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <h3>+500</h3>
+                    <p>Families Supported</p>
+                </div>
+                <div class="impact-card">
+                    <h3>12</h3>
+                    <p>Community Projects</p>
+                </div>
+                <div class="impact-card">
+                    <h3>150</h3>
+                    <p>Children in School</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-f3ms">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="F3MS Logo">
+                    <p>F3MS fights vulnerability and empowers communities with the means to build a dignified future.</p>
+                    <a href="#" class="footer-btn">Join Us →</a>
+                </div>
+                
+                <div>
+                    <h4>Quick Links</h4>
+                    <a href="#">Donate</a>
+                    <a href="#">Donate Items</a>
+                    <a href="#">Our Actions</a>
+                    <a href="#">Impact Report</a>
+                </div>
+
+                <div>
+                    <h4>Contact</h4>
+                    <p>📍 Madagascar</p>
+                    <p>📞 +XXX XX XX XXX XX</p>
+                    <p>✉️ contact@f3ms.org</p>
+                </div>
+
+                <div>
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.3 0-1.7.8-1.7 1.6V12H17l-.5 3h-2.8v7A10 10 0 0 0 22 12z"/></svg></a>
+                        <a href="https://www.instagram.com/?hl=en" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zm6.5-.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2z"/></svg></a>
+                        <a href="https://www.youtube.com/" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.5s-.2-1.6-.8-2.3c-.8-.9-1.6-.9-2-1C16.7 4 12 4 12 4h0s-4.7 0-8.2.2c-.4.1-1.2.1-2 1C1.2 5.9 1 7.5 1 7.5S.8 9.4.8 11.4v1.2c0 2 .2 3.9.2 3.9s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1 1.7.2 7.8.2 7.8.2s4.7 0 8.2-.2c.4-.1 1.2-.1 2-1 .6-.7.8-2.3.8-2.3s.2-1.9.2-3.9v-1.2c0-2-.2-3.9-.2-3.9zM9.5 15.5V8.5l6 3.5-6 3.5z"/></svg></a>
+                        <a href="https://fr.linkedin.com/" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H4zm3.5 15H5V9h2.5v9zM6.2 7.8a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM19 18h-2.5v-4.4c0-1.1 0-2.6-1.6-2.6-1.6 0-1.9 1.2-1.9 2.5V18H10V9h2.4v1.2h.1c.3-.6 1.2-1.4 2.6-1.4 2.8 0 3.3 1.8 3.3 4.1V18z"/></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 F3MS Association – From Care to Change. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
